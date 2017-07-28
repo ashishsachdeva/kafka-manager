@@ -1,0 +1,9 @@
+env_vars=`env | grep KAFKA`
+
+python /usr/local/kafka-manager/utils.py $env_vars
+if [ $? -ne 0 ]; then
+ echo "Exiting : kafka manager startup script utils.py exited with non-zero exit code"
+fi
+
+# Launch kafka Manager
+/usr/local/kafka-manager/kafka-manager-1.3.3.8/bin/kafka-manager
