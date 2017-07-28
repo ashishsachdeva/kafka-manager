@@ -1,4 +1,4 @@
-env_vars=`env | grep CONNECT`
+env_vars=`env | grep KAFKA`
 
 python /usr/local/kafka-manager/utils.py $env_vars
 if [ $? -ne 0 ]; then
